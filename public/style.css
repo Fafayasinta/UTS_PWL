@@ -1,0 +1,389 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header Style */
+header {
+    background-color: #ffa500;
+    color: white;
+    padding: 10px 0; /* Mengurangi padding horizontal untuk lebih menggeser logo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Membuat logo dan navigasi di kanan */
+    align-items: center; /* Sejajarkan secara vertikal */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin-left: -80px; /* Menggeser logo ke kiri */
+}
+
+
+nav {
+    display: flex;
+    justify-content: flex-end; /* Tautan di sebelah kanan */
+    align-items: center; /* Sejajarkan secara vertikal */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px; /* Mengontrol jarak antar tautan */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    background-color: #ffcd61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.login-button:hover {
+    background-color: #ff8c00;
+}
+
+
+
+/* Section Content Style */
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 28px;
+    color: #ffa500; /* Oranye */
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+section .content-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+section .content-box div {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    flex-basis: 30%;
+    transition: transform 0.3s ease;
+}
+
+section .content-box div:hover {
+    transform: translateY(-10px);
+}
+
+section .content-box div h3 {
+    color: #ffa500; /* Oranye */
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+section .content-box div p {
+    color: #333;
+    font-size: 16px;
+}
+
+/* Home Section */
+.home-section {
+    background-color: #fff;
+    padding: 50px 20px;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left Side (Text) */
+.text-content {
+    max-width: 600px;
+}
+
+.text-content h1 {
+    font-size: 3rem;
+    color: #5d2d24; /* Dark Brown color */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background-color: #5d2d24;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #5d2d24;
+    padding: 12px 20px;
+    text-decoration: none;
+    border: 2px solid #5d2d24;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    opacity: 0.8;
+}
+
+/* Right Side (Image) */
+.image-content img {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+#menu {
+    text-align: center;
+    padding: 20px;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #555;
+    padding: 0 10px;
+}
+
+.price {
+    display: block;
+    font-size: 1.2em;
+    color: #ffa500;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+#review {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0; /* Warna latar belakang untuk bagian review */
+    margin-top: 40px; /* Jarak antara menu dan review */
+}
+
+.review-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.review-card {
+    background-color: #ff9800; /* Warna oranye untuk kartu ulasan */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 350px; /* Lebar kartu */
+    height: 150px; /* Tinggi kartu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.review-card:hover {
+    transform: scale(1.02);
+}
+
+.review-card p {
+    font-size: 1em;
+    color: #fff; /* Mengubah warna teks ulasan menjadi putih */
+    margin: 0;
+    height: 60%; /* Mengatur tinggi teks */
+}
+
+.customer-name {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #fff; /* Mengubah warna nama pelanggan menjadi putih */
+}
+
+.review-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.review-card {
+    background-color: #ff9800; /* Warna oranye untuk kartu ulasan */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 350px; /* Lebar kartu */
+    height: 150px; /* Tinggi kartu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    text-align: center; /* Pusatkan teks dan ikon */
+}
+
+.review-card i {
+    font-size: 36px; /* Ukuran ikon */
+    color: #fff; /* Warna ikon putih */
+    margin-bottom: 10px; /* Jarak antara ikon dan teks */
+}
+
+#contact {
+    text-align: center; /* Memusatkan teks */
+    padding: 20px;
+    background-color: #f0f0f0; /* Warna latar belakang yang lembut */
+    border-radius: 8px;
+    margin: 20px 0; /* Jarak atas dan bawah */
+}
+
+#contact p {
+    margin: 10px 0; /* Jarak antar paragraf */
+}
+
+.social-icons {
+    margin-top: 15px; /* Jarak antara teks kontak dan ikon sosial */
+    display: flex; /* Menggunakan flexbox untuk menata ikon */
+    justify-content: center; /* Memusatkan ikon secara horizontal */
+    gap: 15px; /* Jarak antar ikon */
+}
+
+.social-icons a {
+    font-size: 24px; /* Ukuran ikon */
+    color: #333; /* Warna ikon */
+    transition: color 0.3s; /* Efek transisi saat hover */
+}
+
+.social-icons a:hover {
+    color: #e91e63; /* Warna saat hover */
+}
+
+
+
+/* Footer Style */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #ffa500; /* Oranye */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    section .content-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section .content-box div {
+        max-width: 100%;
+    }
+}
