@@ -7,10 +7,10 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\SupplierController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use App\Models\KategoriModel;
 use Illuminate\Support\Facades\Route;
@@ -66,8 +66,11 @@ Route::get('/landing', [LandingController::class, 'index'])->name('landing');
 Route::middleware(['auth'])->group(function(){
     //semua route yang perlu otentikasi
     Route::get('/', [WelcomeController::class, 'index']);
-    Route::get('/profile', [ProfileController::class, 'index']);
-    Route::post('upload_foto', [ProfileController::class, 'upload_foto'])->name('upload.foto');
+    //profile
+    Route::group(['middleware' => 'authorize:ADM,MNG,STF,CUS'], function () {
+        Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+        Route::patch('/profile/update/{id}', [ProfileController::class, 'update'])->name('profile.update');
+    });
 
     //Semua route di grup ini harus punya role ADM (Administrator)
     Route::group(['prefix' => 'user', 'middleware'=> 'authorize:ADM'], function(){
@@ -213,13 +216,15 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/export_pdf', [PenjualanController::class, 'export_pdf']);                 //mengekspor data penjualan dalam bentuk file pdf
     });
 
-    Route::group(['prefix' => 'profile', 'middleware'=> 'authorize:ADM,MNG'], function(){
-        Route::get('/', [ProfileController::class, 'index']);                                //menampilkan laman awal barang
-        Route::get('/edit_ajax', [ProfileController::class, 'edit_ajax']);              //menampilkan laman form edit barang AJAX
-        Route::put('/update_ajax', [ProfileController::class, 'update_ajax']);          //menyimpan perubahan data barang AJAX
-        Route::get('/show_ajax', [ProfileController::class, 'show_ajax']); //show_ajax
+        //profile
+        Route::group(['middleware' => 'authorize:ADM,MNG,STF,CUS'], function () {
+        Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+        Route::patch('/profile/update/{id}', [ProfileController::class, 'update'])->name('profile.update');
     });
+
 });
+
+
 
 // Route::get('/', [WelcomeController::class, 'index']);
 
